@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Farm Products</title>
+<style>
+  /* Global Styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  header h1 {
+    margin: 0;
+  }
+
+  main {
+    padding: 40px 0;
+  }
+
+  .categories {
+    float: right;
+    width: 30%;
+    padding-left: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+position: fixed; /* Fix the position */
+  /* Adjust the top position */
+  right: 20px; /* Adjust the left position */
+  }
+
+  .categories h2 {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .categories ul {
+    list-style: none;
+  }
+
+  .categories ul li {
+    margin-bottom: 10px;
+  }
+
+  .categories ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+  }
+
+  .categories ul li a.active,
+  .categories ul li a:hover {
+    background-color: #e0e0e0;
+  }
+
+  .products {
+    float: left;
+    width: 70%;
+  }
+
+  .products h2 {
+    margin-bottom: 20px;
+  }
+
+  .product {
+    width: calc(33.33% - 20px);
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: none; /* Initially hide all products */
+
+  }
+
+  .product:hover {
+    transform: translateY(-5px);
+  }
+
+  .product img {
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+  }
+
+  .product-info {
+    padding: 10px;
+  }
+
+  .product h3 {
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #333;
+  }
+
+  .product p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .product .price {
+    font-weight: bold;
+  }
+
+  .buy-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+  }
+
+  .buy-btn:hover {
+    background-color: #45a049;
+  }
+
+/* Footer Styles */
+ footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  margin-top: auto;
+}
+
+        .footer-column {
+            margin: 0 20px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .footer-column p,
+        .footer-column ul {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer-column ul li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-icons li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 768px) {
+            footer {
+                padding: 20px 10px;
+            }
+            .footer-column {
+                margin: 10px 0;
+            }
+        }
+
+/* Search bar styles */
+  #product-search {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+
+  #product-search:focus {
+    border-color: #4CAF50;
+    outline: none;
+  }
+
+  /* Category styles */
+
+  .categories {
+    margin-bottom: 20px;
+position: fixed;
+
+  }
+
+  .categories h2 {
+    margin-bottom: 10px;
+  }
+
+  .categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .categories ul li {
+    margin-bottom: 5px;
+  }
+
+  .categories ul li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 8px 10px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+  }
+
+  .categories ul li a.active,
+  .categories ul li a:hover {
+    background-color: #f4f4f4;
+  }
+ /* Header Styles */
+    header {
+      background-color: #339966;
+      color: #fff;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between; /* Align logo to the left and nav to the right */
+      align-items: center; /* Vertically center content */
+    }
+
+    .logo {
+      font-size: 36px;
+      text-align: left;
+       margin-left: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px; /* Adjust spacing between nav items */
+    }
+
+    nav ul li:first-child {
+      margin-left: 0; /* Remove margin from the first nav item */
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #e0e0e0;
+
+</style>
+</head>
+<body>
+<header>
+    
+      <h1 class="logo">FarmMate</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+	  <li><a href="market.html">Market</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="buyer_login.html">Login</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+<main>
+  <div class="container">
+ <input type="text" id="product-search" placeholder="Search products...">
+  <ul>
+    <div class="categories">
+      <h2>Categories</h2>
+      <ul>
+        <li><a href="#" class="category-link active" data-category="all">All</a></li>
+        <li><a href="#" class="category-link" data-category="grocery">Groceries</a></li>
+        <li><a href="#" class="category-link" data-category="fruit">Fruits</a></li>
+        <li><a href="#" class="category-link" data-category="vegetable">Vegetables</a></li>
+        <!-- Add more categories as needed -->
+      </ul>
+    </div>
+    <div class="products">
+      <h2>Products</h2>
+      <div class="product grocery">
+        <img src="https://source.unsplash.com/300x200/?rice" alt="Rice">
+        <div class="product-info">
+          <h3>Rice</h3>
+          <p class="price">$2.99/kg</p>
+          <a href="#" class="buy-btn">Buy</a>
+        </div>
+      </div>
+  <div class="product grocery">
+    <img src="https://source.unsplash.com/300x200/?pasta" alt="Pasta">
+    <div class="product-info">
+      <h3>Pasta (500g)</h3>
+      <p class="price">$1.50</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product grocery">
+    <img src="https://source.unsplash.com/300x200/?bread" alt="Bread">
+    <div class="product-info">
+      <h3>Bread (loaf)</h3>
+      <p class="price">$2.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product grocery">
+    <img src="https://source.unsplash.com/300x200/?eggs" alt="Eggs">
+    <div class="product-info">
+      <h3>Eggs (dozen)</h3>
+      <p class="price">$3.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product grocery">
+    <img src="https://source.unsplash.com/300x200/?milk" alt="Milk">
+    <div class="product-info">
+      <h3>Milk (1 liter)</h3>
+      <p class="price">$1.50</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product grocery">
+    <img src="https://source.unsplash.com/300x200/?cheese" alt="Cheese">
+    <div class="product-info">
+      <h3>Cheese (200g)</h3>
+      <p class="price">$3.50</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product grocery">
+    <img src="https://source.unsplash.com/300x200/?chicken" alt="Chicken Breast">
+    <div class="product-info">
+      <h3>Chicken Breast (1 kg)</h3>
+      <p class="price">$6.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product grocery">
+    <img src="https://source.unsplash.com/300x200/?beef" alt="Ground Beef">
+    <div class="product-info">
+      <h3>Ground Beef (1 kg)</h3>
+      <p class="price">$8.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product grocery">
+    <img src="https://source.unsplash.com/300x200/?tuna" alt="Canned Tuna">
+    <div class="product-info">
+      <h3>Canned Tuna (200g)</h3>
+      <p class="price">$1.50</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product grocery">
+    <img src="https://source.unsplash.com/300x200/?cooking-oil" alt="Cooking Oil">
+    <div class="product-info">
+      <h3>Cooking Oil (1 liter)</h3>
+      <p class="price">$3.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+      <div class="product vegetable">
+        <img src="https://source.unsplash.com/300x200/?carrot" alt="Carrot">
+        <div class="product-info">
+          <h3>Carrot</h3>
+          <p class="price">$0.99/kg</p>
+          <a href="#" class="buy-btn">Buy</a>
+        </div>
+      </div>
+  <div class="product vegetable">
+    <img src="https://source.unsplash.com/300x200/?lettuce" alt="Lettuce">
+    <div class="product-info">
+      <h3>Lettuce (1 head)</h3>
+      <p class="price">$1.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product vegetable">
+    <img src="https://source.unsplash.com/300x200/?cucumbers" alt="Cucumbers">
+    <div class="product-info">
+      <h3>Cucumbers (1 kg)</h3>
+      <p class="price">$2.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product vegetable">
+    <img src="https://source.unsplash.com/300x200/?bell-peppers" alt="Bell Peppers">
+    <div class="product-info">
+      <h3>Bell Peppers (1 kg)</h3>
+      <p class="price">$3.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product vegetable">
+    <img src="https://source.unsplash.com/300x200/?spinach" alt="Spinach">
+    <div class="product-info">
+      <h3>Spinach (200g)</h3>
+      <p class="price">$2.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product vegetable">
+    <img src="https://source.unsplash.com/300x200/?broccoli" alt="Broccoli">
+    <div class="product-info">
+      <h3>Broccoli (1 kg)</h3>
+      <p class="price">$2.50</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product vegetable">
+    <img src="https://source.unsplash.com/300x200/?cauliflower" alt="Cauliflower">
+    <div class="product-info">
+      <h3>Cauliflower (1 piece)</h3>
+      <p class="price">$3.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product vegetable">
+    <img src="https://source.unsplash.com/300x200/?green-beans" alt="Green Beans">
+    <div class="product-info">
+      <h3>Green Beans (1 kg)</h3>
+      <p class="price">$2.50</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product vegetable">
+    <img src="https://source.unsplash.com/300x200/?zucchini" alt="Zucchini">
+    <div class="product-info">
+      <h3>Zucchini (1 kg)</h3>
+      <p class="price">$2.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product vegetable">
+    <img src="https://source.unsplash.com/300x200/?celery" alt="Celery">
+    <div class="product-info">
+      <h3>Celery (1 bunch)</h3>
+      <p class="price">$1.50</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <!-- Add more vegetable products as needed -->
+
+
+      <!-- Add more products as needed -->
+
+  <div class="product fruit">
+    <img src="https://source.unsplash.com/300x200/?apples" alt="Apples">
+    <div class="product-info">
+      <h3>Apples (1 kg)</h3>
+      <p class="price">$2.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product fruit">
+    <img src="https://source.unsplash.com/300x200/?bananas" alt="Bananas">
+    <div class="product-info">
+      <h3>Bananas (1 kg)</h3>
+      <p class="price">$1.50</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product fruit">
+    <img src="https://source.unsplash.com/300x200/?oranges" alt="Oranges">
+    <div class="product-info">
+      <h3>Oranges (1 kg)</h3>
+      <p class="price">$2.50</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product fruit">
+    <img src="https://source.unsplash.com/300x200/?grapes" alt="Grapes">
+    <div class="product-info">
+      <h3>Grapes (1 kg)</h3>
+      <p class="price">$4.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product fruit">
+    <img src="https://source.unsplash.com/300x200/?strawberries" alt="Strawberries">
+    <div class="product-info">
+      <h3>Strawberries (250g)</h3>
+      <p class="price">$3.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product fruit">
+    <img src="https://source.unsplash.com/300x200/?watermelon" alt="Watermelon">
+    <div class="product-info">
+      <h3>Watermelon (1 piece)</h3>
+      <p class="price">$5.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product fruit">
+    <img src="https://source.unsplash.com/300x200/?pineapple" alt="Pineapple">
+    <div class="product-info">
+      <h3>Pineapple (1 piece)</h3>
+      <p class="price">$3.00</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product fruit">
+    <img src="https://source.unsplash.com/300x200/?kiwi" alt="Kiwi">
+    <div class="product-info">
+      <h3>Kiwi (1 piece)</h3>
+      <p class="price">$0.75</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product fruit">
+    <img src="https://source.unsplash.com/300x200/?mangoes" alt="Mangoes">
+    <div class="product-info">
+      <h3>Mangoes (1 kg)</h3>
+      <p class="price">$3.50</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+  <div class="product fruit">
+    <img src="https://source.unsplash.com/300x200/?papaya" alt="Papaya">
+    <div class="product-info">
+      <h3>Papaya (1 piece)</h3>
+      <p class="price">$2.50</p>
+      <a href="#" class="buy-btn">Buy</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+    </div>
+  </div>
+</main>
+
+<footer>
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p>123 Farm Lane, Farmville</p>
+            <p>Email: info@farmmate.com</p>
+            <p>Phone: +1234567890</p>
+        </div>
+        <div class="footer-column">
+            <h3>Popular Links</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Blog</a></li>
+                <!-- Add more popular links as needed -->
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <!-- Add more social media icons as needed -->
+            </ul>
+        </div>
+    </footer>
+
+
+<script>
+  // Show all products by default when the page loads
+  window.addEventListener('DOMContentLoaded', (event) => {
+    document.querySelectorAll('.product').forEach(product => {
+      product.style.display = 'block';
+    });
+  });
+
+  document.querySelectorAll('.category-link').forEach(item => {
+    item.addEventListener('click', event => {
+      event.preventDefault();
+      const category = event.target.getAttribute('data-category');
+      document.querySelectorAll('.product').forEach(product => {
+        if (category === 'all' || product.classList.contains(category)) {
+          product.style.display = 'block';
+        } else {
+          product.style.display = 'none';
+        }
+      });
+      document.querySelectorAll('.category-link').forEach(link => {
+        link.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    });
+  });
+
+  document.getElementById('product-search').addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    document.querySelectorAll('.product').forEach(product => {
+      const productName = product.querySelector('h3').textContent.toLowerCase();
+      if (productName.includes(searchTerm)) {
+        product.style.display = 'block';
+      } else {
+        product.style.display = 'none';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FarmMate</title>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #339966;
+      color: #fff;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between; /* Align logo to the left and nav to the right */
+      align-items: center; /* Vertically center content */
+    }
+
+    .logo {
+      font-size: 36px;
+      text-align: left;
+       margin-left: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px; /* Adjust spacing between nav items */
+    }
+
+    nav ul li:first-child {
+      margin-left: 0; /* Remove margin from the first nav item */
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #e0e0e0;
+    }
+/* Why We Are Section Styles */
+.why-we-are {
+  background-color: #f9f9f9;
+  padding: 80px -20px;
+  text-align: center;
+}
+
+.why-we-are .container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.why-we-are h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+.why-we-are p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+    /* Hero Section Styles */
+    .hero {
+     background-image: url('https://source.unsplash.com/1200x800/?farm');
+      background-size: cover;
+      color: #fff;
+      padding: 100px 200px;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      margin-bottom: 40px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #4caf50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #43a047;
+    }
+
+    /* Features Section Styles */
+    /* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.feature {
+  flex: 0 0 calc(33.33% - 20px);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.feature img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.feature h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.feature p {
+  font-size: 14px;
+  color: #666;
+}
+/* About FarmMate Section Styles */
+/* About FarmMate Section Styles */
+.about-farmmate {
+  background-color: #f9f9f9;
+  padding: 80px -20px;
+}
+
+.about-farmmate .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+box-shadow: 4px 4px 8px rgba(4, 0, 0, 0.1);
+
+}
+
+.about-farmmate h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.about-farmmate p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.content {
+  flex: 1;
+  padding-right: 50px; /* Adjust spacing between text and image */
+}
+
+.image-container {
+  flex: 1;
+}
+
+.image-container img {
+  max-width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+/* Popular Market Products Section Styles */
+/* Popular Market Products Section Styles */
+.popular-products {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.popular-products .container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.popular-products h2 {
+  font-size: 36px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.product {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 20px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.product:hover {
+  transform: translateY(-5px);
+}
+
+.product-info h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.product-info p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.buy-button .btn {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.buy-button .btn:hover {
+  background-color: #43a047;
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+@media (max-width: 768px) {
+  .product {
+    width: calc(50% - 20px);
+    margin-right: 0;
+  }
+}
+
+
+ /* How It Works Section Styles */
+    .how-it-works {
+      background-color: #fff;
+      padding: 80px 0;
+      text-align: center;
+    }
+
+    .how-it-works h2 {
+      margin-bottom: 40px;
+    }
+
+    .how-it-works ol {
+      list-style: none;
+    }
+
+    .how-it-works ol li {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    /* Footer Styles */
+ footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-column {
+            margin: 0 20px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .footer-column p,
+        .footer-column ul {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer-column ul li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-icons li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 768px) {
+            footer {
+                padding: 20px 10px;
+            }
+            .footer-column {
+                margin: 10px 0;
+            }
+        }
+  </style>
+</head>
+<body>
+  <header>
+    
+      <h1 class="logo">FarmMate</h1>
+      <nav>
+        <ul>
+         <li><a href="home.html">Home</a></li>
+	  <li><a href="market.html">Market</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="buyer_login.html">Login</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Empowering Farmers, Connecting Markets</h2>
+      <p>Your all-in-one solution for agricultural management and market access.</p>
+      <a href="#" class="btn">Get Started</a>
+    </div>
+  </section>
+   <section class="why-we-are">
+  <div class="container">
+    <h2>Why Choose Us</h2>
+    <p>Here are some reasons why you should choose FarmMate:</p>
+    <!-- Add your reasons or content here -->
+  </div>
+</section>
+  <section class="features">
+  <div class="container">
+    <div class="row">
+      <div class="feature">
+        <img src="https://source.unsplash.com/200x200/?agriculture" alt="Agricultural Management">
+        <h3>Efficient Agricultural Management</h3>
+        <p>Streamline your farm operations, from planning to harvest, with our comprehensive tools.</p>
+      </div>
+      <div class="feature">
+        <img src="https://source.unsplash.com/200x200/?market" alt="Market Platform">
+        <h3>Seamless Market Access</h3>
+        <p>Sell your produce directly to buyers, or explore new markets effortlessly.</p>
+      </div>
+      <div class="feature">
+        <img src="https://source.unsplash.com/200x200/?farming" alt="Farming Tools">
+        <h3>Advanced Farming Tools</h3>
+        <p>Utilize state-of-the-art farming equipment and technology to maximize efficiency.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="feature">
+        <img src="https://source.unsplash.com/200x200/?crop" alt="Crop Management">
+        <h3>Intelligent Crop Management</h3>
+        <p>Optimize crop yields and monitor growth with precision crop management techniques.</p>
+      </div>
+      <div class="feature">
+        <img src="https://source.unsplash.com/200x200/?trade" alt="Trading Platform">
+        <h3>Integrated Trading Platform</h3>
+        <p>Access global markets and trade agricultural products seamlessly.</p>
+      </div>
+      <div class="feature">
+        <img src="https://source.unsplash.com/200x200/?community" alt="Community Support">
+        <h3>Supportive Farming Community</h3>
+        <p>Connect with fellow farmers and share knowledge and experiences.</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="feature">
+        <img src="https://source.unsplash.com/200x200/?organic" alt="Organic Farming">
+        <h3>Organic Farming Practices</h3>
+        <p>Learn and implement sustainable and organic farming methods.</p>
+      </div>
+      <div class="feature">
+        <img src="https://source.unsplash.com/200x200/?technology" alt="Farm Technology">
+        <h3>Innovative Farm Technology</h3>
+        <p>Stay updated with the latest advancements in agricultural technology.</p>
+      </div>
+      <div class="feature">
+        <img src="https://source.unsplash.com/200x200/?research" alt="Research & Development">
+        <h3>Research & Development</h3>
+        <p>Contribute to and benefit from ongoing agricultural research and development.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <!-- Features content goes here -->
+</section>
+
+<section class="about-farmmate">
+  <div class="container">
+    <div class="content">
+      <h2>About FarmMate</h2>
+      <p>Here's a brief overview of FarmMate:</p>
+      <p>FarmMate is a comprehensive platform that combines agricultural management tools with a market platform. It provides farmers with the tools they need to efficiently manage their farms, from planning to harvest, while also offering seamless access to markets to sell their produce.</p>
+    </div>
+    <div class="image-container">
+      <img src="https://source.unsplash.com/600x400/?farm" alt="FarmMate Image">
+    </div>
+  </div>
+</section>
+ 
+ <!-- Popular Products goes here -->  
+   <section class="why-we-are">
+  <div class="container">
+    <h2>Popular Market Products</h2>
+</section>
+<section class="popular-products">
+  <div class="container">
+    <div class="product">
+	<img src=" https://source.unsplash.com/300x200/?rice" alt="Rice">
+      <div class="product-info">
+        <h3>Rice</h3>
+        <p>Bulk Quantity: 100 kg</p>
+        <p>Price: $50</p>
+      </div>
+      <div class="buy-button">
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+    </div>
+    <div class="product">
+      <div class="product-info">
+	<img src="https://source.unsplash.com/300x200/?lentils" alt="Dal">
+        <h3>Dal</h3>
+        <p>Bulk Quantity: 100 kg</p>
+        <p>Price: $40</p>
+      </div>
+      <div class="buy-button">
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+    </div>
+    <!-- Add more products -->
+    
+    <div class="product">
+	<img src="https://source.unsplash.com/300x200/?soybeans" alt="Soybeans">
+      <div class="product-info">
+        <h3>Soybeans</h3>
+        <p>Bulk Quantity: 100 kg</p>
+        <p>Price: $55</p>
+      </div>
+      <div class="buy-button">
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+    
+    </div>
+      <div class="product">
+        <img src="https://source.unsplash.com/300x200/?rice" alt="Rice">
+        <div class="product-info">
+          <h3>Rice</h3>
+          <p>Bulk Quantity: 100 kg</p>
+          <p>Price: $50</p>
+        </div>
+        <div class="buy-button">
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+      <div class="product">
+        <img src="https://source.unsplash.com/300x200/?lentils" alt="Dal">
+        <div class="product-info">
+          <h3>Dal</h3>
+          <p>Bulk Quantity: 100 kg</p>
+          <p>Price: $40</p>
+        </div>
+        <div class="buy-button">
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+<div class="product">
+	<img src="https://source.unsplash.com/300x200/?wheat" alt="Wheat">
+      <div class="product-info">
+        <h3>Wheat</h3>
+        <p>Bulk Quantity: 100 kg</p>
+        <p>Price: $45</p>
+      </div>
+      <div class="buy-button">
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+    </div>
+</section>
+
+<footer>
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p>123 Farm Lane, Farmville</p>
+            <p>Email: info@farmmate.com</p>
+            <p>Phone: +1234567890</p>
+        </div>
+        <div class="footer-column">
+            <h3>Popular Links</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Blog</a></li>
+                <!-- Add more popular links as needed -->
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <!-- Add more social media icons as needed -->
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</body>
+</html>

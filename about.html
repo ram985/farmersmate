@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <style>
+    /* Reset CSS */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+ /* Header Styles */
+    header {
+      background-color: #339966;
+      color: #fff;
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between; /* Align logo to the left and nav to the right */
+      align-items: center; /* Vertically center content */
+    }
+
+    .logo {
+      font-size: 36px;
+      text-align: left;
+       margin-left: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px; /* Adjust spacing between nav items */
+    }
+
+    nav ul li:first-child {
+      margin-left: 0; /* Remove margin from the first nav item */
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #e0e0e0;
+    }
+
+
+    /* Banner Section Styles */
+    .banner {
+      background-image: url('https://source.unsplash.com/1600x900/?nature');
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 100px 200px;
+    }
+    }
+
+    .banner h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+       /* Team Section Styles */
+    .team {
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .team-member {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-member img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .team-member-content {
+      flex: 1;
+      padding: 20px;
+      text-align: left;
+    }
+
+    .team-member h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .team-member p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    /* Footer Styles */
+ footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .footer-column {
+            margin: 0 20px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .footer-column p,
+        .footer-column ul {
+            margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer-column ul li {
+            list-style: none;
+            margin-bottom: 5px;
+        }
+
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .social-icons li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .social-icons li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons li a:hover {
+            color: #ffcc00;
+        }
+
+        /* Responsive Styling */
+        @media screen and (max-width: 768px) {
+            footer {
+                padding: 20px 10px;
+            }
+            .footer-column {
+                margin: 10px 0;
+            }
+        }
+  </style>
+</head>
+<body>
+<header>
+    
+      <h1 class="logo">FarmMate</h1>
+      <nav>
+        <ul>
+         <li><a href="home.html">Home</a></li>
+	  <li><a href="market.html">Market</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="buyer_login.html">Login</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+    <!-- Banner Section -->
+    <section class="banner">
+      <h1>Welcome to FarmMate</h1>
+      <p>Your all-in-one solution for agricultural management and market access</p>
+    </section>
+    <div class="container">
+   <section class="team">
+      <div class="team-member">
+        <img src="https://via.placeholder.com/200" alt="Sheshu Kumar">
+        <div class="team-member-content">
+          <h3>Sheshu Kumar</h3>
+          <p class="intro">As a designer at FarmMate, Sheshu Kumar brings creativity and innovation to our team. His eye for detail ensures that every aspect of our platform is visually appealing and user-friendly. ID: EMP001</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/200" alt="Sai Krishna">
+        <div class="team-member-content">
+          <h3>Sai Krishna</h3>
+          <p class="intro">Sai Krishna is a skilled developer who plays a key role in bringing our platform to life. With his expertise in coding and problem-solving, he ensures that FarmMate runs smoothly and efficiently. ID: EMP002</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/200" alt="Meghana">
+        <div class="team-member-content">
+          <h3>Meghana</h3>
+          <p class="intro">As a marketing specialist, Meghana helps FarmMate reach its target audience and build strong relationships with customers. Her strategic thinking and communication skills contribute to our platform's success. ID: EMP003</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/200" alt="Rajyalakshmi">
+        <div class="team-member-content">
+          <h3>Rajyalakshmi</h3>
+          <p class="intro">Rajyalakshmi is dedicated to providing excellent customer support to FarmMate users. With her friendly demeanor and problem-solving abilities, she ensures that all user inquiries are addressed promptly. ID: EMP004</p>
+        </div>
+      </div>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/200" alt="Ramgopal">
+        <div class="team-member-content">
+          <h3>Ramgopal</h3>
+          <p class="intro">As a product manager, Ramgopal oversees the development and improvement of FarmMate's features. His strategic vision and leadership skills guide our platform's evolution to meet the needs of our users. ID: EMP005</p>
+        </div>
+      </div>
+    </section>
+  </div>
+<footer>
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <p>123 Farm Lane, Farmville</p>
+            <p>Email: info@farmmate.com</p>
+            <p>Phone: +1234567890</p>
+        </div>
+        <div class="footer-column">
+            <h3>Popular Links</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Blog</a></li>
+                <!-- Add more popular links as needed -->
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <ul class="social-icons">
+                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                <!-- Add more social media icons as needed -->
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
